@@ -5,10 +5,6 @@
 ## 核心功能
 
 *   **多站點監控支援**：
-    *   **DES (Developing-Etching-Stripping)**: 顯影、蝕刻、去膜站點。
-    *   **ENIG (Electroless Nickel Immersion Gold)**: 化學鎳金站點。
-    *   **OSP (Organic Solderability Preservatives)**: 有機保焊膜站點。
-    *   **VRS (Verification & Repair Station)**: 人工檢修站。
 *   **即時影像辨識**：
     *   使用 YOLOv8/v10 模型進行工件辨識與製程動作追蹤。
     *   自定義 ROI (Region of Interest) 區域，精準鎖定檢測範圍。
