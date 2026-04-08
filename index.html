@@ -1,229 +1,306 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人專集 | Side Projects Portfolio</title>
+    <title>GreatRocker | Blog</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --light-bg: #f4f7f6;
-            --white: #ffffff;
-            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --bg: #ffffff;
+            --text: #2d2d2d;
+            --muted: #7b7b7b;
+            --line: #ececec;
+            --accent: #4b4b4b;
+            --link: #3a78c2;
         }
 
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, "Microsoft JhengHei";
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
+            margin: 0;
+            font-family: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
         }
 
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            color: var(--primary-color);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            height: 200px;
-            background: #ddd;
+        .topbar {
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(45deg, #eee, #ccc);
+            justify-content: space-between;
+            min-height: 84px;
+            padding: 0 34px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.98);
         }
 
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-tag {
-            display: inline-block;
-            background: var(--accent-color);
-            color: var(--white);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary-color);
-        }
-
-        .project-description {
+        .site-name {
             font-size: 0.95rem;
-            margin-bottom: 1rem;
-            color: #666;
+            font-weight: 700;
         }
 
-        .tech-stack {
+        .nav {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tech-tag {
-            background: #eee;
-            padding: 0.2rem 0.5rem;
-            border-radius: 3px;
+            gap: 28px;
             font-size: 0.8rem;
-            color: #555;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
         }
 
-        .placeholder-card {
-            border: 2px dashed #ccc;
-            background: transparent;
-            box-shadow: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
+        .nav a {
+            color: #4f4f4f;
         }
 
-        .placeholder-content {
+        .logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 78px;
+            height: 78px;
+            transform: translate(-50%, -44%);
+            border-radius: 50%;
+            background: #353535;
+            color: #ffffff;
+            display: grid;
+            place-items: center;
+            font-size: 1.35rem;
+            font-weight: 700;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 74px 24px 34px;
             text-align: center;
-            color: #999;
         }
 
-        .placeholder-content i {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 1rem;
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(3.4rem, 7vw, 5.4rem);
+            line-height: 1.02;
+            font-weight: 800;
+            letter-spacing: -0.04em;
         }
 
-        footer {
-            text-align: center;
-            padding: 3rem;
-            background: var(--primary-color);
-            color: var(--white);
-            margin-top: 4rem;
+        .hero-line {
+            width: 88px;
+            height: 4px;
+            margin: 18px auto;
+            background: #3d3d3d;
+            border-radius: 999px;
         }
 
-        @media (max-width: 600px) {
-            .project-grid {
+        .hero p {
+            margin: 0;
+            font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+            color: #8a8a8a;
+            font-weight: 300;
+        }
+
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 12px 24px 80px;
+        }
+
+        .post {
+            display: grid;
+            grid-template-columns: 1fr 170px;
+            gap: 28px;
+            padding: 30px 0 36px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .post:last-child {
+            border-bottom: none;
+        }
+
+        .post h2 {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 2.35rem);
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            margin-top: 4px;
+            font-size: 1.02rem;
+            color: #8a8a8a;
+        }
+
+        .post p {
+            margin: 12px 0 0;
+            font-size: 1rem;
+            color: #575757;
+        }
+
+        .feature-list {
+            margin: 16px 0 0;
+            padding-left: 20px;
+            color: #575757;
+        }
+
+        .feature-list li + li {
+            margin-top: 8px;
+        }
+
+        .read-more {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .tags {
+            margin-top: 16px;
+            font-size: 0.92rem;
+            color: #8c8c8c;
+        }
+
+        .tags a {
+            color: var(--link);
+        }
+
+        .thumb {
+            align-self: center;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 38% 30%, #d8e0cf 0%, #d8e0cf 20%, transparent 21%),
+                radial-gradient(circle at 56% 44%, #9aa778 0%, #9aa778 16%, transparent 17%),
+                radial-gradient(circle at 58% 60%, #72815f 0%, #72815f 22%, transparent 23%),
+                linear-gradient(145deg, #f5f2eb 0%, #ece8df 52%, #ddd7cc 100%);
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+        }
+
+        .thumb.alt {
+            background:
+                radial-gradient(circle at 50% 30%, #d5c1b0 0%, #d5c1b0 16%, transparent 17%),
+                linear-gradient(180deg, transparent 0 58%, #d0c5b6 58% 62%, transparent 62%),
+                linear-gradient(145deg, #f4efe9 0%, #e5ddd2 100%);
+        }
+
+        @media (max-width: 760px) {
+            .topbar {
+                padding: 14px 18px;
+                min-height: 74px;
+            }
+
+            .logo {
+                width: 58px;
+                height: 58px;
+                font-size: 1rem;
+                transform: translate(-50%, -48%);
+            }
+
+            .nav {
+                gap: 14px;
+                font-size: 0.72rem;
+            }
+
+            .hero {
+                padding-top: 58px;
+            }
+
+            .post {
                 grid-template-columns: 1fr;
+            }
+
+            .thumb {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                padding-top: 18px;
+                padding-bottom: 12px;
+            }
+
+            .logo {
+                top: 22px;
+                left: auto;
+                right: 18px;
+                transform: none;
+            }
+
+            .hero {
+                text-align: left;
+                padding-top: 42px;
+            }
+
+            .hero-line {
+                margin-left: 0;
             }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>My Side Projects</h1>
-        <p>探索技術與創意的結合</p>
+    <header class="topbar">
+        <div class="site-name">GreatRocker</div>
+        <div class="logo">GR</div>
+        <nav class="nav">
+            <a href="#about">About Me</a>
+            <a href="#posts">Projects</a>
+            <a href="#home">Author's Home</a>
+        </nav>
     </header>
 
-    <div class="container">
-        <h2 class="section-title">精選專案</h2>
-        
-        <div class="project-grid">
-            <!-- CCTV Scripts Project -->
-            <div class="project-card">
-                <div class="project-image">
-                    <span style="font-size: 4rem;">📹</span>
-                </div>
-                <div class="project-content">
-                    <div class="project-tag">Computer Vision</div>
-                    <h3 class="project-title">AI CCTV 智慧工廠監控系統</h3>
-                    <p class="project-description">
-                        基於 YOLOv8/v10 的自動化影像辨識系統，專為 PCB 生產線設計。實現 RTSP 即時串流處理、ROI 區域監控、製程統計與異常偵測。
-                    </p>
-                    <ul style="font-size: 0.9rem; color: #666; margin-left: 1.2rem; margin-bottom: 1rem;">
-                        <li>多站點支援：DES, ENIG, OSP, VRS 等</li>
-                        <li>即時硬體聯動：Modbus TCP 控制警示燈</li>
-                        <li>自動化報表：班別統計 (Day/Night) 與 CSV 記錄</li>
-                        <li>API 整合：即時回報生產數據至 Web 系統</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">YOLOv10</span>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">Modbus</span>
-                        <span class="tech-tag">RTSP</span>
-                    </div>
-                </div>
+    <section class="hero" id="home">
+        <h1>GreatRocker</h1>
+        <div class="hero-line"></div>
+        <p>這裡放我正在做的系統、專案整理，還有一些持續補上的實作筆記。</p>
+    </section>
+
+    <main class="content" id="posts">
+        <article class="post" id="project">
+            <div>
+                <h2>AI CCTV 製造監控系統</h2>
+                <div class="subtitle">把影像辨識、即時串流、告警與紀錄真正接到現場流程裡</div>
+                <p>
+                    這個專案是為 PCB 生產線打造的自動化影像辨識系統，重點不只是辨識結果，
+                    而是讓整體流程可以在現場穩定執行、持續監控並留下可追查的資料。
+                    <span class="read-more">[Read More]</span>
+                </p>
+                <ul class="feature-list">
+                    <li>基於 YOLOv8/v10 的自動化影像辨識系統，專為 PCB 生產線設計。實現 RTSP 即時串流處理、ROI 區域監控、製程統計與異常偵測。</li>
+                    <li>多站點支援：DES, ENIG, OSP, VRS 等</li>
+                    <li>即時硬體聯動：Modbus TCP 控制警示燈</li>
+                    <li>自動化報表：班別統計 (Day/Night) 與 CSV 記錄</li>
+                    <li>API 整合：即時回報生產數據至 Web 系統</li>
+                </ul>
+                <div class="tags">Tags: <a href="#project">computer vision</a></div>
             </div>
+            <div class="thumb" aria-hidden="true"></div>
+        </article>
 
-            <!-- Placeholder Project 1 -->
-            <div class="project-card placeholder-card">
-                <div class="placeholder-content">
-                    <span style="font-size: 3rem;">🚀</span>
-                    <h3>Next Big Project</h3>
-                    <p>Coming Soon...</p>
-                </div>
+        <article class="post" id="about">
+            <div>
+                <h2>偏現場導向的開發筆記</h2>
+                <div class="subtitle">比起好看的 demo，我更在意能不能長時間穩定運作</div>
+                <p>
+                    我做的內容通常偏工程實作，會更在意誤報率、現場接受度、資料追查與後續維護，
+                    不會只停在展示畫面。之後也會把更多專案與工作中的想法慢慢整理到這裡。
+                    <span class="read-more">[Read More]</span>
+                </p>
+                <div class="tags">Tags: <a href="#about">notes</a></div>
             </div>
-
-            <!-- Placeholder Project 2 -->
-            <div class="project-card placeholder-card">
-                <div class="placeholder-content">
-                    <span style="font-size: 3rem;">💡</span>
-                    <h3>Creative Idea</h3>
-                    <p>In Progress...</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Side Projects Portfolio. All rights reserved.</p>
-    </footer>
-
+            <div class="thumb alt" aria-hidden="true"></div>
+        </article>
+    </main>
 </body>
 </html>
