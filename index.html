@@ -84,6 +84,245 @@
             text-align: center;
         }
 
+        .topic-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin: 0 auto 34px;
+            max-width: 1040px;
+        }
+
+        .topic-card {
+            width: min(100%, 158px);
+            border: 1px solid #d8ddd7;
+            border-radius: 18px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(241, 246, 241, 0.92)),
+                linear-gradient(135deg, rgba(216, 228, 216, 0.3), rgba(255, 255, 255, 0));
+            box-shadow: 0 14px 28px rgba(62, 75, 54, 0.08);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .topic-card.topic-card-wide {
+            width: min(100%, 980px);
+        }
+
+        .topic-card.is-active {
+            transform: translateY(-4px);
+            border-color: #8ea589;
+            box-shadow: 0 18px 34px rgba(62, 75, 54, 0.15);
+        }
+
+        .topic-card summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 0.94rem;
+            font-weight: 700;
+            color: #314132;
+        }
+
+        .topic-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .topic-card > :not(summary) {
+            display: none;
+        }
+
+        .topic-card p {
+            margin: 0;
+            padding: 0 16px 16px;
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #5d675d;
+        }
+
+        .topic-panel {
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .topic-panel-inner {
+            padding: 22px 24px 24px;
+            border: 1px solid #d8ddd7;
+            border-radius: 28px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 246, 241, 0.94)),
+                linear-gradient(135deg, rgba(216, 228, 216, 0.26), rgba(255, 255, 255, 0));
+            box-shadow: 0 18px 34px rgba(62, 75, 54, 0.12);
+        }
+
+        .topic-panel p {
+            margin: 0;
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: #575757;
+        }
+
+        .topic-card .topic-intro {
+            padding-bottom: 8px;
+        }
+
+        .topic-body {
+            padding: 0 18px 20px;
+            text-align: left;
+        }
+
+        .topic-body h3 {
+            margin: 0 0 6px;
+            font-size: 1.48rem;
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #203225;
+        }
+
+        .topic-body .subtitle {
+            margin: 0 0 14px;
+            color: #6d7b6f;
+        }
+
+        .topic-body .feature-list {
+            margin-top: 14px;
+            margin-bottom: 0;
+        }
+
+        .topic-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) 220px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .topic-visual {
+            min-height: 220px;
+            border-radius: 28px;
+            background:
+                radial-gradient(circle at 32% 24%, rgba(234, 241, 228, 0.95) 0 16%, transparent 17%),
+                radial-gradient(circle at 62% 44%, rgba(145, 166, 133, 0.9) 0 13%, transparent 14%),
+                radial-gradient(circle at 58% 67%, rgba(95, 116, 84, 0.9) 0 18%, transparent 19%),
+                linear-gradient(145deg, #f8fbf7 0%, #edf3ea 52%, #dbe7d8 100%);
+            box-shadow: inset 0 0 0 1px rgba(43, 61, 49, 0.08);
+        }
+
+        .topic-media {
+            display: grid;
+            gap: 14px;
+        }
+
+        .topic-media-card {
+            padding: 14px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: inset 0 0 0 1px rgba(43, 61, 49, 0.08);
+        }
+
+        .topic-media-frame {
+            overflow: hidden;
+            border-radius: 18px;
+            background: linear-gradient(145deg, #f8fbf7 0%, #edf3ea 52%, #dbe7d8 100%);
+            aspect-ratio: 4 / 3;
+        }
+
+        .topic-media-frame img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topic-media-label {
+            margin: 12px 0 6px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #4b5d4e;
+        }
+
+        .topic-media-description {
+            margin: 0;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: #5d675d;
+        }
+
+        .flow-block {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(68, 86, 72, 0.12);
+        }
+
+        .flow-block h4 {
+            margin: 0 0 12px;
+            font-size: 1rem;
+            color: #2f4334;
+            letter-spacing: 0.02em;
+        }
+
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .flow-card {
+            padding: 16px;
+            border: 1px solid rgba(87, 107, 91, 0.14);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .flow-title {
+            margin: 0 0 12px;
+            font-size: 0.96rem;
+            font-weight: 800;
+            color: #2d4031;
+        }
+
+        .flow-chart {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .flow-step {
+            padding: 9px 12px;
+            border-radius: 999px;
+            background: #edf4eb;
+            color: #314032;
+            font-size: 0.88rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .flow-arrow {
+            color: #7f9182;
+            font-weight: 800;
+        }
+
+        .flow-outcome {
+            margin-top: 16px;
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #314a36 0%, #445d49 100%);
+            color: #f5f8f4;
+        }
+
+        .flow-outcome strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.92rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
         .hero h1 {
             margin: 0;
             font-size: clamp(3.4rem, 7vw, 5.4rem);
@@ -212,6 +451,24 @@
                 padding-top: 58px;
             }
 
+            .topic-strip {
+                gap: 12px;
+                margin-bottom: 28px;
+            }
+
+            .topic-card {
+                width: calc(50% - 6px);
+            }
+
+            .topic-card.topic-card-wide {
+                width: 100%;
+            }
+
+            .topic-layout,
+            .flow-grid {
+                grid-template-columns: 1fr;
+            }
+
             .post {
                 grid-template-columns: 1fr;
             }
@@ -243,6 +500,14 @@
                 padding-top: 42px;
             }
 
+            .topic-strip {
+                justify-content: flex-start;
+            }
+
+            .topic-card {
+                width: 100%;
+            }
+
             .hero-line {
                 margin-left: 0;
             }
@@ -264,30 +529,116 @@
         <h1>GreatRocker</h1>
         <div class="hero-line"></div>
         <p>這裡放我正在做的系統、專案整理，還有一些持續補上的實作筆記。</p>
+        <div class="topic-strip" aria-label="GreatRocker topic list">
+            <details class="topic-card topic-card-wide" open>
+                <summary>CCTV System</summary>
+                <div class="topic-body">
+                    <p class="topic-intro">整合 IPCam、NVR、RTSP 與事件告警，對應現場監控、錄影追溯與異常通知流程。</p>
+                    <div class="topic-layout">
+                        <div>
+                            <h3>AI CCTV 製造監控系統</h3>
+                            <div class="subtitle">把影像辨識、即時串流、告警與紀錄真正接到現場流程裡</div>
+                            <p>
+                                這個專案是為生產線打造的自動化影像辨識系統，重點不只是辨識結果，
+                                而是讓整體流程可以在現場穩定執行、持續監控並留下可追查的資料。
+                            </p>
+                            <ul class="feature-list">
+                                <li>基於 YOLO11/YOLOWorld/YOLOE26等以及結合HSV等傳統影像辨識 的自動化影像辨識系統，專為生產線設計，支援 RTSP 即時串流處理、ROI 區域監控、製程統計與異常偵測。</li>
+                                <li>多站點支援：不同製程節點可共用同一套監控架構。</li>
+                                <li>即時硬體聯動：透過 Modbus TCP 控制警示燈與現場告警訊號。</li>
+                                <li>自動化報表：提供班別統計（Day/Night）與 CSV 紀錄，方便稽核與追蹤。</li>
+                                <li>API 整合：即時回報生產數據至 Web 系統，串接既有 WIP/管理平台。</li>
+                            </ul>
+                        </div>
+                        <div class="topic-media">
+                            <div class="topic-media-card">
+                                <div class="topic-media-frame">
+                                    <img src="./images/cctv-system-placeholder.jpg" alt="AI CCTV 製造監控系統畫面示意圖">
+                                </div>
+                                <div class="topic-media-label">Description</div>
+                                <p class="topic-media-description">
+                                    放這張圖片的說明。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-block">
+                        <h4>System Context Flow</h4>
+                        <div class="flow-grid">
+                            <section class="flow-card">
+                                <div class="flow-title">Training Pipeline</div>
+                                <div class="flow-chart">
+                                    <span class="flow-step">監控行為定義</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">製程場景盤點</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">影像資料擷取</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">抽幀與清洗</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">資料標註</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">模型訓練</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">監控邏輯開發</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">影片驗證</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">True/False 校驗</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">現場上線</span>
+                                </div>
+                            </section>
+                            <section class="flow-card">
+                                <div class="flow-title">Inference Pipeline</div>
+                                <div class="flow-chart">
+                                    <span class="flow-step">擷取 CCTV 影像</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">影格轉換與推論</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">目標偵測結果輸出</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">邏輯規則判定</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">異常警報與 DB 記錄</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-step">異常片段回朔</span>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="flow-outcome">
+                            <strong>Operational Outcome</strong>
+                            使用者可透過 CCTV 警報系統與 CCTV 統計管理介面，結合 WIP System，達成異常行為即時告警、現場快速糾正與事後追蹤回溯。
+                        </div>
+                    </div>
+                </div>
+            </details>
+            <details class="topic-card">
+                <summary>Docker</summary>
+                <p>用容器封裝前端、推論服務與資料流程，讓部署、版本切換與跨機器重建更穩定。</p>
+            </details>
+            <details class="topic-card">
+                <summary>Github/Gitea版控協作</summary>
+                <p>以 branch、pull request 與自架 Gitea 進行多人協作，保留提交紀錄、審查流程與回滾能力。</p>
+            </details>
+            <details class="topic-card">
+                <summary>AI Agent</summary>
+                <p>把需求拆成可執行任務，協助生成程式、檢查問題、整理文件與加速迭代。</p>
+            </details>
+            <details class="topic-card">
+                <summary>Others</summary>
+                <p>延伸到網路架構、權限管理、報表匯出、UI 展示與維運監控等周邊模組。</p>
+            </details>
+            <details class="topic-card">
+                <summary>AI module</summary>
+                <p>聚焦模型推論、影像前處理、缺陷判讀與 API 串接，支援 CCTV 智慧分析應用。</p>
+            </details>
+        </div>
+        <div class="topic-panel" id="topic-panel" aria-live="polite"></div>
     </section>
 
     <main class="content" id="posts">
-        <article class="post" id="project">
-            <div>
-                <h2>AI CCTV 製造監控系統</h2>
-                <div class="subtitle">把影像辨識、即時串流、告警與紀錄真正接到現場流程裡</div>
-                <p>
-                    這個專案是為 PCB 生產線打造的自動化影像辨識系統，重點不只是辨識結果，
-                    而是讓整體流程可以在現場穩定執行、持續監控並留下可追查的資料。
-                    <span class="read-more">[Read More]</span>
-                </p>
-                <ul class="feature-list">
-                    <li>基於 YOLOv8/v10 的自動化影像辨識系統，專為 PCB 生產線設計。實現 RTSP 即時串流處理、ROI 區域監控、製程統計與異常偵測。</li>
-                    <li>多站點支援：DES, ENIG, OSP, VRS 等</li>
-                    <li>即時硬體聯動：Modbus TCP 控制警示燈</li>
-                    <li>自動化報表：班別統計 (Day/Night) 與 CSV 記錄</li>
-                    <li>API 整合：即時回報生產數據至 Web 系統</li>
-                </ul>
-                <div class="tags">Tags: <a href="#project">computer vision</a></div>
-            </div>
-            <div class="thumb" aria-hidden="true"></div>
-        </article>
-
         <article class="post" id="about">
             <div>
                 <h2>偏現場導向的開發筆記</h2>
@@ -302,5 +653,50 @@
             <div class="thumb alt" aria-hidden="true"></div>
         </article>
     </main>
+    <script>
+        (function () {
+            const cards = Array.from(document.querySelectorAll('.topic-strip .topic-card'));
+            const panel = document.getElementById('topic-panel');
+
+            if (!cards.length || !panel) {
+                return;
+            }
+
+            function getPanelMarkup(card) {
+                return Array.from(card.children)
+                    .filter((node) => node.tagName !== 'SUMMARY')
+                    .map((node) => node.outerHTML)
+                    .join('');
+            }
+
+            function setActive(card) {
+                cards.forEach((item) => {
+                    item.classList.toggle('is-active', item === card);
+                    if (item === card) {
+                        item.setAttribute('open', '');
+                    } else {
+                        item.removeAttribute('open');
+                    }
+                });
+
+                panel.innerHTML = '<div class="topic-panel-inner">' + getPanelMarkup(card) + '</div>';
+            }
+
+            cards.forEach((card) => {
+                const summary = card.querySelector('summary');
+
+                if (!summary) {
+                    return;
+                }
+
+                summary.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    setActive(card);
+                });
+            });
+
+            setActive(cards.find((card) => card.hasAttribute('open')) || cards[0]);
+        }());
+    </script>
 </body>
 </html>
